@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Fokker-Eindecker-EIII/eiii-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Fokker-Eindecker-EIII/Sounds/eiii-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Fokker-Eindecker-EIII/Models/eiii.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Fokker-Eindecker-EIII/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Fokker Eindecker E.III</title>
+      <key>
+        <name>e</name>
+        <desc>Gun fire</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/eiii-menu.xml"/>
+
+  </sim>
+
+  <controls>
+    <engines>
+      <engine>
+        <mixture archive="y"> 0.65 </mixture>
+      </engine>
+    </engines>
+  </controls> 
+
+  <input>
+    <keyboard include="Nasal/eiii-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <eiii>
+      <file>Aircraft/Fokker-Eindecker-EIII/Nasal/eiii.nas</file>
+      <file>Aircraft/Fokker-Eindecker-EIII/Nasal/liveries.nas</file>
+    </eiii>
+    <guns>
+      <file>Aircraft/Fokker-Eindecker-EIII/Nasal/weapons.nas</file>
+    </guns>
+  </nasal>
+
+</PropertyList>
+
