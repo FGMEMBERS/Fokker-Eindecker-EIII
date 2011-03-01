@@ -59,7 +59,7 @@
 
          <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 
-        <control-speed control="FLAP0" transition-time="4"/>
+         <control-speed control="FLAP0" transition-time="4"/>
   </hstab>
 
   <vstab x="-3.157" y="0" z="0.002" 
@@ -74,7 +74,7 @@
 
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
 
-        <control-speed control="FLAP0" transition-time="2"/>
+         <control-speed control="FLAP0" transition-time="2"/>
   </vstab>
 
   <!-- Engines      : Oberursel U.I
