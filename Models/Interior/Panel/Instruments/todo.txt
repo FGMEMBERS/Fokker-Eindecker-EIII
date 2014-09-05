@@ -1,8 +1,0 @@
-todo :
-
-1 rpm
-1 altimeter
-1 pressure
-1 fuel indicator
-1 compas
-

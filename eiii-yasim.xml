@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Fokker Eindecker E III
                   : 2011 Emmanuel BARANGER
@@ -13,14 +13,14 @@
      Max speed    :  140 km/h (  76 kt      )
 -->
 
-<airplane mass="882" >
+<airplane mass="882" version="YASIM_VERSION_ORIGINAL">
 
-  <approach speed="20" aoa="7" fuel="0.3">
+  <approach speed="20" aoa="4" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
   </approach>
   
-  <cruise speed="70" alt="5000" fuel="0.7" >
+  <cruise speed="70" alt="1000">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1" />
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65" />
   </cruise>
@@ -34,47 +34,42 @@
         chord="1.755" 
         length="4.730" 
         taper="1" 
-        camber="0.01">
-        <stall aoa="24" width="1" peak="1.5"/>
-        <flap1 start="0.95" end="1" lift="1.2" drag="1.1"/>
+        camber="0.001">
+        <stall aoa="22" width="1" peak="1.5"/>
+        <flap1 start="0.55" end="1" lift="1.2" drag="1.1"/>
       
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
       
         <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
-
-        <control-speed control="FLAP0" transition-time="4"/>
   </wing>
 
   <hstab x="-3.077" y="0" z="0.309" 
-	 chord="0.793" 
-	 length="1.444" 
+         chord="0.793" 
+         length="1.444" 
          taper="1"> 
-         <stall aoa="22" width="1" peak="1.5"/>
-         <flap0 start="0" end="0.7" lift="1.55" drag="1.2"/>
+         <stall aoa="20" width="1" peak="1.5"/>
+         <flap0 start="0" end="0.7" lift="1.3" drag="1.1"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
 
          <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
-
-         <control-speed control="FLAP0" transition-time="4"/>
   </hstab>
 
   <vstab x="-3.157" y="0" z="0.002" 
-	 chord="0.864" 
-	 length="0.989" 
+         chord="0.864" 
+         length="0.989" 
          taper="1">
-         <stall aoa="20" width="1" peak="1.5"/>
-         <flap0 start="0" end="1" lift="1.6" drag="1.2"/>
+         <stall aoa="18" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.2" drag="1.1"/>
 
          <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
 
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
 
-         <control-speed control="FLAP0" transition-time="2"/>
   </vstab>
 
   <!-- Engines      : Oberursel U.I
@@ -94,20 +89,21 @@
              mass="303"       
              moment="4"
              cruise-power="100"
-             cruise-alt="5000" 
+             cruise-alt="1000" 
              cruise-speed="70"
              cruise-rpm="1100"
              takeoff-power="115"
              takeoff-rpm="1300">
              <actionpt x="3.506" y="0" z="0.281"/>
              <piston-engine eng-rpm="1300" 
-                            alt="5000" 
+                            alt="1000" 
                             eng-power="115"
-                            displacement="781.63"/>
-             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
-             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
-             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
-             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+                            displacement="781.63">
+                            <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+                            <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+                            <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+                            <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+             </piston-engine>
   </propeller>
 
   <!-- Left wheel -->
