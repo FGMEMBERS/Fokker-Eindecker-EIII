@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>asi.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>bezel</object-name>
+    <object-name>edge</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Fokker-Eindecker-EIII/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.2 </red>
+      <green> 0.1 </green>
+      <blue>  0.1 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    <interpolation>
+      <entry><ind>   0.00 </ind><dep>   0 </dep></entry> <!--   0 km/h -->
+      <entry><ind>  43.19 </ind><dep>  45 </dep></entry> <!--  20 km/h -->
+      <entry><ind>  59.39 </ind><dep>  90 </dep></entry> <!--  40 km/h -->
+      <entry><ind>  71.81 </ind><dep> 135 </dep></entry> <!--  60 km/h -->
+      <entry><ind>  84.77 </ind><dep> 180 </dep></entry> <!-- 100 km/h -->
+      <entry><ind>  95.60 </ind><dep> 225 </dep></entry> <!-- 120 km/h -->
+      <entry><ind> 103.60 </ind><dep> 270 </dep></entry> <!-- 140 km/h -->
+      <entry><ind> 111.23 </ind><dep> 315 </dep></entry> <!-- 180 km/h -->
+      <entry><ind> 118.80 </ind><dep> 360 </dep></entry> <!-- 220 km/h -->
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
