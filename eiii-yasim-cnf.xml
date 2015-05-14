@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="eiii-base.xml">
+
+  <sim>
+
+    <description>Fokker Eindecker E III (YASim)</description>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">eiii-yasim</aero>
+
+  </sim>
+
+</PropertyList>

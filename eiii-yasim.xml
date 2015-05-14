@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Fokker Eindecker E III
                   : 2011 Emmanuel BARANGER
@@ -10,66 +10,75 @@
      Height       : 2.40 m    (   7 ft 9 in )
      Empty weight :  400 kg   ( 882 lb      )
      Engine       : 1 Oberursel U.I 1 Rotary Engine ( 99 hp )
-     Max speed    :  140 km/h (  76 kt      )
+     Max speed    :  133 km/h (  76 kt      )
 -->
 
-<airplane mass="882" version="YASIM_VERSION_ORIGINAL">
+<airplane mass="892" >
 
-  <approach speed="20" aoa="4" fuel="0.3">
+  <approach speed="36" aoa="4" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
   </approach>
   
-  <cruise speed="70" alt="1000">
+  <cruise speed="83" alt="5000" fuel="0.79" >
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1" />
-    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65" />
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.78" />
   </cruise>
 
   <cockpit x="1.642" y="0.00" z="0.901"/>
 
-  <fuselage ax="3.366" ay="0" az="0.311" bx="-2.967" by="0" bz="0.314" width="1.031" taper="0.4" midpoint="0.01"/>
+<fuselage ax="3.40" ay="0" az="0.402" bx="2.467" by="0" bz="0.27" width="1.031" taper="0.64" midpoint="0.1"/>
+<fuselage ax="2.467" ay="0" az="0.27" bx="1.13" by="0" bz="0.24" width="0.931" taper="0.84" midpoint="0.0"/>
+<fuselage ax="1.13" ay="0" az="0.24" bx="-2.942" by="0" bz="0.25" width="0.631" taper="0.24" midpoint="0.0" cy="0.83" cz="0.47"/>
 
   <!-- Wing up -->
-  <wing x="1.796" y="0" z="0.329" 
-        chord="1.755" 
-        length="4.730" 
+  <wing x="1.874" y="0.39" z="0.40" 
+        chord="1.78" 
+        length="4.130"
+        incidence="1.25" 
         taper="1" 
-        camber="0.001">
-        <stall aoa="22" width="1" peak="1.5"/>
-        <flap1 start="0.55" end="1" lift="1.2" drag="1.1"/>
+        camber="0.11">
+       <stall aoa="14" width="3" peak="1.75"/>
+       <flap1 start="0.79" end="1" lift="1.26" drag="1.41"/>
+
       
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
       
         <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="0.4"/>
   </wing>
 
-  <hstab x="-3.077" y="0" z="0.309" 
-         chord="0.793" 
-         length="1.444" 
-         taper="1"> 
-         <stall aoa="20" width="1" peak="1.5"/>
-         <flap0 start="0" end="0.7" lift="1.3" drag="1.1"/>
+  <hstab x="-3.077" y="0.22" z="0.309" 
+	 chord="0.793" 
+	 length="1.39" 
+         taper="0.87"> 
+         <stall aoa="17" width="3.0" peak="1.5"/>
+         <flap0 start="0" end="1.0" lift="1.65" drag="1.32"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
 
          <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+
+         <control-speed control="FLAP0" transition-time="0.2"/>
   </hstab>
 
   <vstab x="-3.157" y="0" z="0.002" 
-         chord="0.864" 
-         length="0.989" 
-         taper="1">
-         <stall aoa="18" width="1" peak="1.5"/>
-         <flap0 start="0" end="1" lift="1.2" drag="1.1"/>
+	 chord="0.864" 
+	 length="0.989" 
+         taper="0.86">
+         <stall aoa="20" width="5" peak="2.5"/>
+         <flap0 start="0" end="1" lift="1.86" drag="1.12"/>
 
          <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
 
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
 
+         <control-speed control="FLAP0" transition-time="0.2"/>
   </vstab>
 
   <!-- Engines      : Oberursel U.I
@@ -79,38 +88,42 @@
                       http://en.wikipedia.org/wiki/Gnome_Monosoupape
 
        Type         : 9-cylinder, single-row, rotary engine
-       Power        :   115 hp at 1300 rpm (Maximum power)
-       Displacement :  12.8 L     ( 781.63 in3 )
+       Power        :   100 hp at 1200 rpm (Maximum power)
+       Displacement :  16.28 L     ( 993.23 in3 )
        Diameter     :    95 cm    (  37.40 in  )
-       Masse        : 137.4 kg    ( 303.00 lb  )
+       Masse        : 117.4 kg    ( 269.00 lb  )
   -->
-  <propeller x="3.218" y="0" z="0.281"  
-             radius="1.21"
-             mass="303"       
-             moment="4"
-             cruise-power="100"
-             cruise-alt="1000" 
-             cruise-speed="70"
-             cruise-rpm="1100"
-             takeoff-power="115"
-             takeoff-rpm="1300">
-             <actionpt x="3.506" y="0" z="0.281"/>
-             <piston-engine eng-rpm="1300" 
-                            alt="1000" 
-                            eng-power="115"
-                            displacement="781.63">
-                            <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
-                            <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
-                            <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
-                            <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
-             </piston-engine>
-  </propeller>
+
+<propeller x="3.218" y="0" z="0.281"
+              mass="265"
+              radius="1.238"
+              moment="25"
+	        cruise-speed="83"
+	        cruise-rpm="1180"
+              cruise-alt="5000" 
+	        cruise-power="87"
+              takeoff-power="100" 
+	        takeoff-rpm="1200"> 
+           <actionpt x="3.506" y="0" z="0.281"/>
+             <piston-engine eng-rpm="1200"
+                            eng-power="100"
+                            displacement="993.23"
+                            bore="4.9"
+                            stroke="5.9" 
+                            min-throttle="0.052"
+                            compression="4.25"/>
+           <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+           <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+           <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+           <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+</propeller>
 
   <!-- Left wheel -->
   <gear x="2.531" y="1.010" z="-1.197" 
         sfric="1.1"
         dfric="0.6"
         compression="0.02">
+     <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>
 
   <!-- Right wheel -->
@@ -118,6 +131,7 @@
         sfric="1.1"
         dfric="0.6"
         compression="0.02">
+ <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>
 
   <!-- Tail wheel -->
@@ -125,9 +139,15 @@
         sfric="1.1"
         dfric="0.6"
         compression="0.02">
+ <control-input axis="/controls/gear/tailwheel-lock" src0="0" src1="1"  dst0="1" dst1="0" control="CASTERING"/>
   </gear>
 
-  <!-- Fuel: Forward 142 lbs -->
-  <tank x="2.824" y="0" z="0.562" capacity="160"/>
+    <!-- Fuel: Forward 142 lbs -->
+  <tank x="2.24" y="0" z="0.562" capacity="160"/>
+
+      <!-- Pilot Weight -->
+ <weight x="1.565" y="0.00" z="0.303" mass-prop="/sim/weight[0]/weight-lb"/>
+
+ <ballast x="0.38" y="0" z="-0.710" mass="200"/>
   
 </airplane>

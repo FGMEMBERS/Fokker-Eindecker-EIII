@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+   <!-- ALTIMETER -->
+  <model>
+    <path>Aircraft/Fokker-EI/Models/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  -2.0929 </x-m>
+      <y-m> 0.2937 </y-m>
+      <z-m>  0.612 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> -90.000 </heading-deg>
+    </offsets>
+  </model>
+  
+  <!-- TURN -->
+  <!-- <model>
+    <path>Aircraft/Fokker-EI/Models/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m> 0.689 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.26 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> -->
+
+   <!-- MAGNETO -->
+  <!-- <model>
+    <path>Aircraft/Fokker-EI/Models/Panel/Instruments/magneto/magneto.xml</path>
+    <offsets>
+      <x-m> 0.689 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.26 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> -->
+  
+  <!-- FUEL SELECTOR -->
+  <!-- <model>
+    <path>Aircraft/Fokker-EI/Models/Panel/Instruments/fuelselector/fuelselector.xml</path>
+    <offsets>
+      <x-m> 0.684 </x-m>
+      <y-m> -0.070 </y-m>
+      <z-m> 0.16 </z-m>
+    </offsets>
+  </model> -->
+  
+  <!-- PUMP SELECTOR -->
+  <!-- <model>
+    <path>Aircraft/Fokker-EI/Models/Panel/Instruments/pump/pump.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.370 </y-m>
+      <z-m> 0.040 </z-m>
+    </offsets>
+  </model> -->
+  
+     <!-- RPM -->
+  <model>
+    <path>Aircraft/Fokker-EI/Models/Panel/Instruments/RPM/tach.xml</path>
+    <offsets>
+      <x-m>  -2.3417 </x-m>
+      <y-m>  -0.273 </y-m>
+      <z-m>  0.459 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 40.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Compass -->
+  <!-- <model>
+    <path>Aircraft/Fokker-EI/Models/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>  1.0935 </x-m>
+      <y-m>  0.279 </y-m>
+      <z-m>  -0.224 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   90.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> -->
+
+  <!-- ASI -->
+  <model>
+    <path>Aircraft/Fokker-EI/Models/Panel/Instruments/ASI/asi.xml</path>
+    <offsets>
+      <x-m>  -2.29 </x-m>
+      <y-m>  -0.178 </y-m>
+      <z-m>  0.647 </z-m>
+      <roll-deg>      0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
+
