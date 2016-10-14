@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+   <!-- ALTIMETER -->
+  <model>
+    <path>Aircraft/Fokker-Eindecker-EIII/Models/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  -2.0929 </x-m>
+      <y-m> 0.2937 </y-m>
+      <z-m>  0.612 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> -90.000 </heading-deg>
+    </offsets>
+  </model>
+  
+  
+     <!-- RPM -->
+  <model>
+    <path>Aircraft/Fokker-Eindecker-EIII/Models/Panel/Instruments/RPM/tach.xml</path>
+    <offsets>
+      <x-m>  -2.3417 </x-m>
+      <y-m>  -0.273 </y-m>
+      <z-m>  0.459 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 40.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- ASI -->
+  <model>
+    <path>Aircraft/Fokker-Eindecker-EIII/Models/Panel/Instruments/ASI/asi.xml</path>
+    <offsets>
+      <x-m>  -2.29 </x-m>
+      <y-m>  -0.178 </y-m>
+      <z-m>  0.647 </z-m>
+      <roll-deg>      0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
+

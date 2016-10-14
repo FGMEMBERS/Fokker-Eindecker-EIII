@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
  
 <PropertyList>
 
@@ -6,7 +6,7 @@
  
     <crank>
       <name>engstart</name>
-      <path>Aircraft/Fokker-Eindecker-EIII/Sounds/starter.wav</path>
+      <path>Aircraft/Fokker-Eindecker-EIII/Sounds/cranking.wav</path>
       <property>/engines/engine/cranking</property>
       <volume>
         <offset>0.4</offset>
@@ -15,22 +15,27 @@
       <max-dist>1000</max-dist>
     </crank>
 
-    <crank>
-      <name>crank</name>
-      <mode>looped</mode>
-      <path>Sounds/cranking.wav</path>
-      <condition>
-        <property>/engines/engine/cranking</property>
-        <not>
-          <property>/engines/engine/running</property>
-        </not>
-      </condition>
-      <volume>
-        <offset>0.5</offset>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </crank>
+      <cough>
+   <name>cough</name>
+   <path>Aircraft/Fokker-Eindecker-EIII/Sounds/shutdown.wav</path>
+   <condition>
+    <property>engines/engine/rpm</property>
+    <not>
+     <property>engines/engine/running</property>
+    </not>
+   </condition>
+   <volume>
+    <property>engines/engine/rpm</property>
+    <factor>0.001</factor>
+   </volume>
+   <pitch>
+    <property>engines/engine/rpm</property>
+    <min>0.8</min>
+    <max>1.0</max>
+    <offset>0.0026667</offset>
+    <factor>0.000666</factor>
+   </pitch>
+  </cough>
 
     <crank>
       <name>cough</name>
@@ -45,7 +50,7 @@
 
     <engine>
       <name>engine</name>
-      <path>Aircraft/Fokker-Eindecker-EIII/Sounds/running.wav</path>
+      <path>Aircraft/Fokker-Eindecker-EIII/Sounds/engine.wav</path>
       <mode>looped</mode>
       <property>/engines/engine/running</property>
       <volume>
@@ -58,39 +63,13 @@
       <pitch>
         <property>/engines/engine/rpm</property>
         <factor>0.0008</factor>
-        <min>0.3</min>
+        <min>0.2</min>
         <max>1.0</max>
         <offset>0.3</offset>
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </engine>
-
-    <propeller>
-      <name>propeller</name>
-      <mode>looped</mode>
-      <path>Sounds/turboprop1.wav</path>
-      <property>/engines/engine/running</property>
-      <volume>
-        <property>/orientation/alpha-deg</property>
-        <type>log</type>
-        <min>0.2</min>
-        <max>1.0</max>
-      </volume>
-      <volume>
-        <property>/sim/current-view/internal</property>
-        <factor>0.5</factor>
-      </volume>
-      <pitch>
-        <property>/engines/engine/mp-osi</property>
-        <factor>0.0036</factor>
-        <min>0.5</min>
-        <max>2.0</max>
-        <offset>0.9</offset>
-      </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </propeller>
 
     <rumble>
       <name>rumble</name>
@@ -173,31 +152,32 @@
       <max-dist>1000</max-dist>
     </wind>
 
-    <stall>
-      <name>stall</name>
-      <mode>looped</mode>
-      <path>Sounds/stall.wav</path>
-      <condition>
-        <and>
-          <property>/sim/alarms/stall-warning</property>
-          <greater-than>
-            <property>/velocities/airspeed-kt</property>
-            <value>10</value>
-          </greater-than>
-          <not>
-            <property>/gear/gear[0]/wow</property>
-            <property>/gear/gear[1]/wow</property>
-            <property>/gear/gear[2]/wow</property>
-          </not>
-        </and>
-      </condition>
-      <volume>
-        <property>/sim/alarms/stall-warning</property>
-        <max>1.0</max>
-      </volume>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>20.0</max-dist>
-    </stall>
+   <stall>
+   <name>stall</name>
+   <mode>looped</mode>
+   <type>avionics</type>
+   <path>Aircraft/Fokker-Eindekker-EIII/Sounds/stallbuffet.wav</path>
+   <condition>
+    <and>
+     <property>sim/alarms/stall-warning</property>
+     <greater-than>
+       <property>velocities/airspeed-kt</property>
+       <value>10</value>
+     </greater-than>
+     <not>
+       <property>gear/gear[0]/wow</property>
+       <property>gear/gear[1]/wow</property>
+       <property>gear/gear[2]/wow</property>
+     </not>
+    </and>
+   </condition>
+   <volume>
+    <property>sim/alarms/stall-warning</property>
+    <max>1.0</max>
+   </volume>
+   <reference-dist>10.0</reference-dist>
+   <max-dist>20.0</max-dist>
+  </stall>
 
     <guns> 
       <name>gunfire</name>
